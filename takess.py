@@ -4,7 +4,7 @@ from ctypes import windll
 from PIL import Image
 
 def simg(name):
-    hwnd = win32gui.FindWindow(None, 'java')
+    hwnd = win32gui.FindWindow(None, 'Minecraft 1.11.2')
 
     # Change the line below depending on whether you want the whole window
     # or just the client area. 
