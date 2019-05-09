@@ -34,7 +34,7 @@ missionXML = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                   <Weather>clear</Weather>
                 </ServerInitialConditions>
                 <ServerHandlers>
-                  <FileWorldGenerator src="C:\\Malmo2\\Minecraft\\run\\saves\\Desert"/>
+                  <FileWorldGenerator src="C:\\Malmo2\\Minecraft\\run\\saves\\ColdTaiga"/>
                   <ServerQuitWhenAnyAgentFinishes/>
                 </ServerHandlers>
               </ServerSection>
@@ -68,8 +68,9 @@ if agent_host.receivedArgument("help"):
     print(agent_host.getUsage())
     exit(0)
 
+malmoutils.parse_command_line(agent_host)
 my_mission = MalmoPython.MissionSpec(missionXML, True)
-my_mission_record = MalmoPython.MissionRecordSpec()
+my_mission_record = malmoutils.get_default_recording_object(agent_host, "teleport_results")
 
 # Attempt to start a mission:
 max_retries = 3
@@ -98,22 +99,24 @@ print()
 print("Mission running ", end=' ')
 
 counting_dict = None
+
 for x in range(10):
     for z in range(10):
-        world_state = agent_host.getWorldState()
-        if world_state.number_of_observations_since_last_state > 0:
-            obs = json.loads(world_state.observations[-1].text)
-            obs_list = obs["observation"]
-            obs_list = [value for value in obs_list if value != "air"]
-            list(filter(lambda x: x == "air", obs_list))
-            counting = dict(Counter(obs_list))
-            print(counting)
+        world_state = agent_host.peekWorldState()
         teleport_x = x * 1000 + 0.5
         teleport_z = z * 1000 + 0.5
-        tp_command = "tp " + str(teleport_x)+ " 90 " + str(teleport_z)
-        time.sleep(1)
+        tp_command = "tp " + str(teleport_x)+ " 100 " + str(teleport_z)
         print("Sending command: " + tp_command)
         agent_host.sendCommand(tp_command)
+        time.sleep(3)
+        agent_host.sendCommand("setPitch 0")
+        for i in range(3):
+            agent_host.sendCommand("turn 0.5")
+            time.sleep(1)
+            agent_host.sendCommand("turn 0")
+            time.sleep(0.5)
+
+
 
 # Loop until mission ends:
 agent_host.sendCommand("quit")
