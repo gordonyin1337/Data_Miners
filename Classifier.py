@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[11]:
-
-
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
@@ -14,19 +8,12 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 from keras import backend as K
 
 
-# In[12]:
-
-
-img_width, img_height = 150, 150
+img_width, img_height = 150, 150 # 
 train_data_dir = 'C:\MinecraftFiles' #replace this with your own directory for pictures
 nb_train_samples = 2400
 nb_validation_samples = 600
 epochs = 50 #number of passes over the data, can be set to less or more. Accuracy of .66 seems to be the limit after around ~40
 batch_size = 16
-
-
-# In[13]:
-
 
 train_datagen = ImageDataGenerator(
         rescale=1./255,
@@ -34,10 +21,6 @@ train_datagen = ImageDataGenerator(
         zoom_range=0.2,
         horizontal_flip=True,
         validation_split=.25)
-
-
-# In[14]:
-
 
 #reads images in from the directory, the "subset" parameters automatically splits the data
 train_generator = train_datagen.flow_from_directory(
@@ -53,9 +36,6 @@ validation_generator = train_datagen.flow_from_directory(
         batch_size=batch_size,
         class_mode='binary',
         subset='validation')
-
-
-# In[15]:
 
 
 #these are the parameters we could try changing to get better results, things such as adding additional convolution layers.
@@ -89,9 +69,6 @@ model.compile(loss='binary_crossentropy',
               metrics=['accuracy'])
 
 
-# In[ ]:
-
-
 model.fit_generator(
         train_generator,
         steps_per_epoch=1600 // batch_size,
@@ -100,14 +77,6 @@ model.fit_generator(
         validation_steps=600 // batch_size)
 model.save_weights('first_try.h5')  #saves the model. once you have this file saved it's possible to open it somewhere else with keras
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
