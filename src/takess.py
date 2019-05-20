@@ -8,8 +8,8 @@ def simg(name):
 
     # Change the line below depending on whether you want the whole window
     # or just the client area. 
-    #left, top, right, bot = win32gui.GetClientRect(hwnd)
-    left, top, right, bot = win32gui.GetWindowRect(hwnd)
+    left, top, right, bot = win32gui.GetClientRect(hwnd)
+    #left, top, right, bot = win32gui.GetWindowRect(hwnd)
     w = right - left
     h = bot - top
 
@@ -24,8 +24,8 @@ def simg(name):
 
     # Change the line below depending on whether you want the whole window
     # or just the client area. 
-    #result = windll.user32.PrintWindow(hwnd, saveDC.GetSafeHdc(), 1)
-    result = windll.user32.PrintWindow(hwnd, saveDC.GetSafeHdc(), 0)
+    result = windll.user32.PrintWindow(hwnd, saveDC.GetSafeHdc(), 1)
+    #result = windll.user32.PrintWindow(hwnd, saveDC.GetSafeHdc(), 0)
 
     bmpinfo = saveBitMap.GetInfo()
     bmpstr = saveBitMap.GetBitmapBits(True)
@@ -44,4 +44,4 @@ def simg(name):
         #PrintWindow Succeeded
         im.save(name + ".jpg")
 
-#simg("screenshot1")
+#simg("Screenshots//screenshot1")
