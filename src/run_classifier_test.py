@@ -7,6 +7,7 @@ import json
 from collections import Counter
 import takess
 import predict
+import random
 
 MINECRAFT_WORLDS = "C:\\Malmo2\\Minecraft\\run\\saves\\"
 
@@ -20,6 +21,10 @@ else:
     import functools
 
     print = functools.partial(print, flush=True)
+
+x_value = '''"''' + str(random.randint(1,50000)) + '''"'''
+y_value = '''"90"'''
+z_value = '''"''' + str(random.randint(1,50000)) + '''"'''
 
 
 def create_mission(biome):
@@ -46,21 +51,27 @@ def create_mission(biome):
                   <AgentSection mode="Creative">
                     <Name>Data_Miner</Name>
                     <AgentStart>
+                        <Placement x='''+x_value+''' y='''+y_value+''' z='''+z_value+'''/> 
                     </AgentStart>
                     <AgentHandlers>
+                      <ChatCommands/>
                       <MissionQuitCommands/>
                       <AbsoluteMovementCommands/>
-                      <ObservationFromGrid>
-                        <Grid name="observation">
-                            <min x="-25" y="-25" z="-25"/>
-                            <max x="24" y="24" z="24"/>
-                        </Grid>
-                      </ObservationFromGrid>
+                      <ObservationFromSystem/>
                       <ContinuousMovementCommands turnSpeedDegs="180"/>
                     </AgentHandlers>
                   </AgentSection>
                 </Mission>'''
     return missionXML
+
+def delete_directory(directory):
+    for file in os.listdir(directory):
+        file_path = os.path.join(directory,file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(e)
 
 agent_host = MalmoPython.AgentHost()
 try:
@@ -103,8 +114,11 @@ def run_mission(biome):
     print()
     print("Mission running ", end=' ')
 
+
+    delete_directory(INPUT_FOLDER)
     time.sleep(4)
     for i in range(8):
+        world_state = agent_host.getWorldState()
         agent_host.sendCommand("setPitch 0")
         agent_host.sendCommand("turn 0.5")
         time.sleep(0.5)
@@ -113,8 +127,9 @@ def run_mission(biome):
         time.sleep(0.5)
 
 
-    print("Classifying screenshots...")
     biome_prediction = predict.predict(MODEL_NAME, INPUT_FOLDER)
+    print(biome_prediction)
+    agent_host.sendCommand("chat " + "Biome guess: " + biome_prediction )
     agent_host.sendCommand("quit")
     while world_state.is_mission_running:
         print(".", end="")
@@ -126,4 +141,5 @@ def run_mission(biome):
     print()
     print("Mission ended")
 
-run_mission("IceMountains")
+possible_biomes = ["IcePlains", "IceMountains", "ColdTaiga"]
+run_mission(possible_biomes[random.randint(0,2)])
