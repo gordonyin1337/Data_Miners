@@ -26,6 +26,8 @@ For our qualitative evaluation, we use our working test model within Malmo. The 
 ![](images/WorkingModel.png "Working Test Model Screenshot")
 
 ### Remaining Goals and Challenges:
+Our prototype model only classifies between 4 similar biomes within the same sub-category, so within the next several weeks, we hope to expand that to many, if not all, the biomes within Minecraft. The goal of our working model is to have the agent spawn into a full Minecraft world containing all biomes, and be able to classify the biome it is spawned in. We also want to add a feature that allows the agent to teleport to other locations, and classify the biome in each new location. 
 
+Some of the most significant challenges we anticipate are the time-constraints, as gathering data for all the biomes as well as training our CNN on a substantial amount of data will take quite a bit of time. We also anticipate accuracy to reach a ceiling as we introduce more biomes, due to many biomes that look extremely similar, poor spawn and teleport locations that result in poor input data, and the limited amount of training data we can gather. Because one of our goals is to compare simpler classification algorithms to the more complex Convolutional Neural Network, we should still be able to show that one is more effective than the other, despite these setbacks. 
 
 ### Resources Used:
