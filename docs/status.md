@@ -23,7 +23,7 @@ For our quantitiative evaluation, we compare the accuracy of our baseline classi
 
 For our qualitative evaluation, we use our working test model within Malmo. The agent randomly chooses between the biomes that the Neural Network was trained on, and is spawned in a random location within that one biome Minecraft world. The agent then gathers input data similarly to how we gathered the training data: the agent spins around in a 360 degree circle and takes 8 screenshots of the game. Our classifier then classifies these 8 screenshots and picks the highest occurring classification, then prints its guess to the Minecraft chat bar. We can evaluate the accuracy of its guess by pressing “F3” within the Minecraft game to bring up the debug menu, which contains the biome information.
 
-![](images/WorkingModel.png, "Working Test Model Screenshot")
+![](images/WorkingModel.png "Working Test Model Screenshot")
 
 ### Remaining Goals and Challenges:
 
