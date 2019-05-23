@@ -15,5 +15,15 @@ To gather image data for training our classification algorithms, we run a Malmo 
 (ADD LIBRARIES FOR SVM AND PARAMETERS FOR BASELINE)
 (ADD LIBRARIES FOR CNN AND PARAMETERS USED, FUNCTIONS, RECTIFIERS, EVERYTHING YOU CAN THINK OF)
 
+### Evaluation:
+For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of (ACCURACY) and our CNN achieves an accuracy of (ACCURACY) on the test data. The Neural Network is (SLIGHTLY/SIGNIFICANTLY) more accurate than the baseline according to this data. These are the plots of both classification algorithms’ accuracy:
 
-![](images/IceMountains_67.jpg)
+(PLOTS AND GRAPHS OF BOTH CLASSIFIERS)
+
+For our qualitative evaluation, we use our working test model within Malmo. The agent randomly chooses between the biomes that the Neural Network was trained on, and is spawned in a random location within that one biome Minecraft world. The agent then gathers input data similarly to how we gathered the training data: the agent spins around in a 360 degree circle and takes 8 screenshots of the game. Our classifier then classifies these 8 screenshots and picks the highest occurring classification, then prints its guess to the Minecraft chat bar. We can evaluate the accuracy of its guess by pressing “F3” within the Minecraft game to bring up the debug menu, which contains the biome information.
+
+![](images/WorkingModel.png)
+
+### Remaining Goals and Challenges:
+
+### Resources Used:
