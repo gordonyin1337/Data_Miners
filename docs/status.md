@@ -16,3 +16,4 @@ To gather image data for training our classification algorithms, we run a Malmo 
 (ADD LIBRARIES FOR CNN AND PARAMETERS USED, FUNCTIONS, RECTIFIERS, EVERYTHING YOU CAN THINK OF)
 
 
+![](images/IceMountains_67.jpg)
