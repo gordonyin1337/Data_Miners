@@ -129,7 +129,8 @@ def run_mission(biome):
 
     biome_prediction = predict.predict(MODEL_NAME, INPUT_FOLDER)
     print(biome_prediction)
-    agent_host.sendCommand("chat " + "Biome guess: " + biome_prediction )
+    agent_host.sendCommand("chat " + "Biome guess: " + str(biome_prediction))
+    time.sleep(1)
     agent_host.sendCommand("quit")
     while world_state.is_mission_running:
         print(".", end="")

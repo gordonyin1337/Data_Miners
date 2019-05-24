@@ -7,7 +7,7 @@ import os
 
 def predict(model_name,input_folder):
     model = load_model(model_name)
-    name_dict = {0: 'ColdTaiga', 1: 'ColdTaigaHills', 2: 'IceMountains', 3:'IcePlains'}
+    name_dict = {0: 'ColdTaiga', 1: 'ColdTaigaHills', 2: 'IcePlains', 3:'IceMountains'}
     predictions = []
     for filename in os.listdir(input_folder):
         image = Image.open(input_folder + '/' + filename)
@@ -16,6 +16,7 @@ def predict(model_name,input_folder):
         image = np.expand_dims(image, axis=0)
         result = model.predict_classes(image)[0]
         predictions.append(result)
+    print(predictions)
 
     max_occurrence = max(predictions, key=predictions.count)
     return name_dict[max_occurrence]
