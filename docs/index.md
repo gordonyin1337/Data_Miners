@@ -2,7 +2,9 @@
 layout: default
 title:  Home
 ---
-![](images/dataminers.png "title")
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/gordonyin1337/Data_Miners/master/docs/images/dataminers.png">
+</p>
 
 ### Summary:
 A biome in Minecraft is a region in Minecraft with varying geographical features. While some biomes are incredibly distinct and unique others are incredibly similar. Our goal for this project is to use Convolutional Neural Networks to create a program that predicts what biome the player is in through image recognition.
