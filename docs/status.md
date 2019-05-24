@@ -31,6 +31,6 @@ Our prototype model only classifies between 4 similar biomes within the same sub
 Some of the most significant challenges we anticipate are the time-constraints, as gathering data for all the biomes as well as training our CNN on a substantial amount of data will take quite a bit of time. We also anticipate accuracy to reach a ceiling as we introduce more biomes, due to many biomes that look extremely similar, poor spawn and teleport locations that result in poor input data, and the limited amount of training data we can gather. Because one of our goals is to compare simpler classification algorithms to the more complex Convolutional Neural Network, we should still be able to show that one is more effective than the other, despite these setbacks. 
 
 ### Resources Used:
-How to take a screenshot on Windows: https://stackoverflow.com/questions/19695214/python-screenshot-of-inactive-window-printwindow-win32gui
-How to get HOG features and train them with SVM: https://www.kaggle.com/manikg/training-svm-classifier-with-hog-features
-How to build a neural network: https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5
+- [How to take a screenshot on Windows] (https://stackoverflow.com/questions/19695214/python-screenshot-of-inactive-window-printwindow-win32gui)
+- [How to get HOG features and train them with SVM] (https://www.kaggle.com/manikg/training-svm-classifier-with-hog-features)
+- [How to build a neural network] (https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
