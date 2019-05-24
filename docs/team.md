@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## Gordon Yin
 ***UCI Net ID***: gyin1
 
-## USER 2
+## Daniel Murphy
 ***UCI Net ID***: murphyd1
 
-## USER 3
+## Anthony Cheung
 ***UCI Net ID***: ahcheun1
