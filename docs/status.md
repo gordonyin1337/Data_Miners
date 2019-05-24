@@ -33,4 +33,6 @@ Some of the most significant challenges we anticipate are the time-constraints, 
 ### Resources Used:
 - [How to take a screenshot on Windows](https://stackoverflow.com/questions/19695214/python-screenshot-of-inactive-window-printwindow-win32gui)
 - [How to get HOG features and train them with SVM](https://www.kaggle.com/manikg/training-svm-classifier-with-hog-features)
+- [More about SVM features](https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72)
+- [More about HOG features](https://www.learnopencv.com/histogram-of-oriented-gradients/)
 - [How to build a neural network](https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
