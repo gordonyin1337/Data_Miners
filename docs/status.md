@@ -42,3 +42,5 @@ Some of the most significant challenges we anticipate are the time-constraints, 
 - [More about SVM features](https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72)
 - [More about HOG features](https://www.learnopencv.com/histogram-of-oriented-gradients/)
 - [How to build a neural network](https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
+- [A Comprehensive Guide to Convolutional Neural Networks](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
+- [Convolutional Neural Networks in Keras](https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
