@@ -6,11 +6,12 @@ import time
 import json
 from collections import Counter
 import takess
+import random
 
 MINECRAFT_WORLDS = "C:\\Malmo2\\Minecraft\\run\\saves\\"
 RECORDINGS = "C:\\Malmo2\\CS175_Homework\\Data_Miners\\Recordings"
 
-biome = "Ocean"
+biome = "IcePlains"
 
 if sys.version_info[0] == 2:
     sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
@@ -105,8 +106,8 @@ counter = 0
 for x in range(10):
     for z in range(10):
         world_state = agent_host.peekWorldState()
-        teleport_x = x * 1000 + 0.5
-        teleport_z = z * 1000 + 0.5
+        teleport_x = random.randint(1,80000)
+        teleport_z = random.randint(1,80000)
         tp_command = "tp " + str(teleport_x)+ " 100 " + str(teleport_z)
         print("Sending command: " + tp_command)
         agent_host.sendCommand(tp_command)
