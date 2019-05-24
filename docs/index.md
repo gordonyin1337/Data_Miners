@@ -10,38 +10,20 @@ title:  Home
 A biome in Minecraft is a region in Minecraft with varying geographical features. While some biomes are very distinct and unique others are incredibly similar. Our goal for this project is to use Convolutional Neural Networks to create a program that predicts what biome the player is in through image recognition.
 
 ![](images/biomes.png "examples of biomes")
-The Source Code for our project can be found [here.](https://github.com/gordonyin1337/Data_Miners)
+<p align="center">
+  <img width="1255" height="524" src="https://github.com/gordonyin1337/Data_Miners/blob/master/docs/images/CNN.png?raw=true">
+</p>
 
-Reports:
+### Reports:
 
 - [Proposal](proposal.html)
 - [Status](status.html)
 - [Final](final.html)
 
-What's Markdown (`.md`)?
+### Source Code:
+The Source Code for our project can be found [here.](https://github.com/gordonyin1337/Data_Miners)
 
-Markdown is markup that lets you write hypertext (HTML) documents
-in easy-to-read and easy-to-write plain text.
-No angle brackets `<></>` required for
-paragraphs, lists, blockquotes, tables, etc.
+### Other Resources:
+- [Additional Information on Minecraft Biomes](https://minecraft.gamepedia.com/Biome)
+- [Comprehensive Guide to Convolutional Neural Networks](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
 
-
-This is a paragraph (in Markdown). Some more
-text here.
-
-This is another paragraph.
-
-This is a list:
-
-- Orange
-- Apple
-- Blueberry
-
-$$x^2 = y^2$$
-
-
-Just getting started with Markdown?
-See the [HTML <-> Markdown Quick Reference (Cheat Sheet)][quickref].
-
-
-[quickref]: https://github.com/mundimark/quickrefs/blob/master/HTML.md
