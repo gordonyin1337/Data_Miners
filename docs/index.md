@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 <p align="center">
-  <img width="460" height="300" src="https://raw.githubusercontent.com/gordonyin1337/Data_Miners/master/docs/images/dataminers.png">
+  <img width="542" height="102" src="https://raw.githubusercontent.com/gordonyin1337/Data_Miners/master/docs/images/dataminers.png">
 </p>
 
 ### Summary:
