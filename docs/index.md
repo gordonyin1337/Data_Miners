@@ -4,7 +4,7 @@ title:  Home
 ---
 ![](images/dataminers.png "title")
 
-Source code: [Source Code](https://github.com/gordonyin1337/Data_Miners)
+The Source Code for our project can be found [here](https://github.com/gordonyin1337/Data_Miners)
 
 Reports:
 
