@@ -7,7 +7,7 @@ title:  Home
 ### Summary:
 A biome in Minecraft is a region in Minecraft with varying geographical features. While some biomes are incredibly distinct and unique others are incredibly similar. Our goal for this project is to use Convolutional Neural Networks to create a program that predicts what biome the player is in through image recognition.
 
-![](images/exampleBiomes.png "examples of biomes")
+![](images/biomes.png "examples of biomes")
 The Source Code for our project can be found [here.](https://github.com/gordonyin1337/Data_Miners)
 
 Reports:
