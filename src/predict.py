@@ -7,7 +7,7 @@ import os
 
 def predict(model_name,input_folder):
     model = load_model(model_name)
-    name_dict = {0: 'ColdTaiga', 1: 'IceMountains', 2: 'IcePlains'}
+    name_dict = {0: 'ColdTaiga', 1: 'ColdTaigaHills', 2: 'IceMountains', 3:'IcePlains'}
     predictions = []
     for filename in os.listdir(input_folder):
         image = Image.open(input_folder + '/' + filename)

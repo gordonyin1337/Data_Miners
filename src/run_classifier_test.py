@@ -141,5 +141,5 @@ def run_mission(biome):
     print()
     print("Mission ended")
 
-possible_biomes = ["IcePlains", "IceMountains", "ColdTaiga"]
-run_mission(possible_biomes[random.randint(0,2)])
+possible_biomes = ["IcePlains", "IceMountains", "ColdTaiga", "ColdTaigaHills"]
+run_mission(possible_biomes[random.randint(0,3)])
