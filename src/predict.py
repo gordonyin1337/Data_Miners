@@ -7,7 +7,11 @@ import os
 
 def predict(model_name,input_folder):
     model = load_model(model_name)
-    name_dict = {0: 'ColdTaiga', 1: 'ColdTaigaHills', 2: 'IcePlains', 3:'IceMountains'}
+    name_dict = {0: 'Beach', 1: 'BirchForest', 2: 'BirchForestHills', 3:'ColdBeach', 4: 'ColdTaiga',
+                 5: 'ColdTaigaHills', 6: 'Desert', 7: 'DesertHills', 8: 'ExtremeHills', 9: 'Forest', 10: 'ForestHills', 
+                 11: 'IceMountains', 12: 'IcePlains', 13: 'Jungle', 14: 'JungleHills', 15:'MegaTaiga', 16: 'MegaTaigaHills', 
+                 17: 'Mesa', 18: 'MushroomIsland', 19: 'Plains', 20: 'RoofedForest', 21: 'Savanna', 22: 'SavannaPlateau', 
+                 23: 'StoneBeach', 24: 'Swampland', 25: 'Taiga', 26: 'TaigaHills'}
     predictions = []
     for filename in os.listdir(input_folder):
         image = Image.open(input_folder + '/' + filename)
