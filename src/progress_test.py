@@ -11,7 +11,7 @@ import random
 
 MINECRAFT_WORLDS = "C:\\Malmo2\\Minecraft\\run\\saves\\"
 
-MODEL_NAME = 'conv_network.h5'  # this should stay the same
+MODEL_NAME = 'conv_network_full.h5'  # this should stay the same
 INPUT_FOLDER = "C:\\Malmo2\\CS175_Homework\\Data_Miners\\src\\Test"  # change this to your own location
 
 
