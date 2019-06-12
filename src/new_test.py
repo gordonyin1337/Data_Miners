@@ -11,7 +11,7 @@ import random
 
 MINECRAFT_WORLDS = "C:\\Malmo2\\Minecraft\\run\\saves\\"
 
-MODEL_NAME = 'conv_network.h5'  # this should stay the same
+MODEL_NAME = 'conv_network_full.h5'  # this should stay the same
 INPUT_FOLDER = "C:\\Malmo2\\CS175_Homework\\Data_Miners\\src\\Test"  # change this to your own location
 
 
@@ -22,7 +22,7 @@ else:
 
     print = functools.partial(print, flush=True)
 
-def create_mission(biome):
+def create_mission():
     missionXML = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 <Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
@@ -39,7 +39,7 @@ def create_mission(biome):
                       <Weather>clear</Weather>
                     </ServerInitialConditions>
                     <ServerHandlers>
-                      <FileWorldGenerator src="''' + MINECRAFT_WORLDS + biome + '''"/>
+                      <DefaultWorldGenerator/>
                     </ServerHandlers>
                   </ServerSection>
 
@@ -79,8 +79,8 @@ if agent_host.receivedArgument("help"):
     exit(0)
 
 
-def run_mission(biome):
-    my_mission = MalmoPython.MissionSpec(create_mission(biome), True)
+def run_mission():
+    my_mission = MalmoPython.MissionSpec(create_mission(), True)
     my_mission_record = MalmoPython.MissionRecordSpec()
 
     max_retries = 3
@@ -109,13 +109,13 @@ def run_mission(biome):
     print("Mission running ", end=' ')
 
 
-    for i in range(15):
+    while True:
         delete_directory(INPUT_FOLDER)
         time.sleep(10)
-        takess.simg("Test//test_" + str(i))
+        takess.simg("Test//test")
         biome_prediction = predict.predict(MODEL_NAME, INPUT_FOLDER)
         agent_host.sendCommand("chat " + "Biome guess: " + str(biome_prediction))
 
     agent_host.sendCommand("quit")
 
-run_mission("ColdTaigaHills")
+run_mission()
