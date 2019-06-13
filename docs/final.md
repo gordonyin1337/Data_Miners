@@ -26,8 +26,8 @@ After creating the convolutional neural network we used the fit function with th
 ### Evaluation:
 For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 25% and our CNN achieves an accuracy of 63% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. Another significant observation was how the accuracy of the baseline and CNN changed when we added more biomes. When we increased the number of biomes from 4 to 27 the accuracy of the baseline dropped around 35% while the accuracy of the CNN decreased by 20%, indicating that the CNN is better suited for handling a higher number of classes. These are the plots of both classification algorithms’ accuracy:
 
-![](images/SVMclassification.png "SVM classification report") 
-![](images/svmnew.png "SVM training and test error with training data") 
+![](images/SVMclass.png "SVM classification report") 
+![](images/SVMupdated.png "SVM training and test error with training data") 
 ![](images/finalgraph.jpg "CNN Loss and Accuracy")
 
 For our qualitative evaluation, we use our working test model within Malmo, and judge its accuracy. The human-controlled agent spawns in a randomly generated Minecraft world that contains all biomes in the game. As we manually manuever the agent throughout the world, a Python script takes a screenshot of the game every 10 seconds and passes this image through our Convolutional Neural Network. Once classified, the biome guess is printed to the Minecraft chat bar. We can evaluate the accuracy of its guess by pressing “F3” within the Minecraft game to bring up the debug menu, which contains the biome information. 
