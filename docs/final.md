@@ -41,6 +41,8 @@ For our quantitiative evaluation, we compare the accuracy of our baseline classi
 
 For our qualitative evaluation, we use our working test model within Malmo, and judge its accuracy. The human-controlled agent spawns in a randomly generated Minecraft world that contains all biomes in the game. As we manually manuever the agent throughout the world, a Python script takes a screenshot of the game every 10 seconds and passes this image through our Convolutional Neural Network. Once classified, the biome guess is printed to the Minecraft chat bar. We can evaluate the accuracy of its guess by pressing “F3” within the Minecraft game to bring up the debug menu, which contains the biome information. 
 
+![](images/WorkingModelFinal.png "Working Model Screenshot")
+
 After analyzing both qualitative and quantitative evaluations, we have concluded that a Convolutional Neural Network is better suited to classifying the biome images. Classifying the biomes solely based on pixel color and intensity is not enough to accurately classify a Minecraft biome, due to the many similar colors and block types that can present themselves in different biomes. The CNN's ability to understand the sophistication of an image allows its accuracy to be much higher than traditional image classification algorithms.
 
 ## References:
