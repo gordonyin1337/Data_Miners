@@ -20,12 +20,21 @@ To build a convolutional neural network for classifying biomes we utilized the K
 ### Evaluation:
 [UPDATE NUMBERS AND PLOTS]
 
-For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 53% and our CNN achieves an accuracy of 73% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. These are the plots of both classification algorithms’ accuracy:
+For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 25% and our CNN achieves an accuracy of [PERCENTAGE]% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. These are the plots of both classification algorithms’ accuracy:
 
 [UPDATED PLOTS GO HERE]
+![](images/svmnew.png "SVM training and test error") 
 
 For our qualitative evaluation, we use our working test model within Malmo, and judge its accuracy. The human-controlled agent spawns in a randomly generated Minecraft world that contains all biomes in the game. As we manually manuever the agent throughout the world, a Python script takes a screenshot of the game every 10 seconds and passes this image through our Convolutional Neural Network. Once classified, the biome guess is printed to the Minecraft chat bar. We can evaluate the accuracy of its guess by pressing “F3” within the Minecraft game to bring up the debug menu, which contains the biome information. 
 
 After analyzing both qualitative and quantitative evaluations, we have concluded that a Convolutional Neural Network is better suited to classifying the biome images. Classifying the biomes solely based on pixel color and intensity is not enough to accurately classify a Minecraft biome, due to the many similar colors and block types that can present themselves in different biomes. The CNN's ability to understand the sophistication of an image allows its accuracy to be much higher than traditional image classification algorithms.
 
 ### References:
+- [How to take a screenshot on Windows](https://stackoverflow.com/questions/19695214/python-screenshot-of-inactive-window-printwindow-win32gui)
+- [How to get HOG features and train them with SVM](https://www.kaggle.com/manikg/training-svm-classifier-with-hog-features)
+- [More about SVM and its parameters](https://www.hackerearth.com/blog/developers/simple-tutorial-svm-parameter-tuning-python-r/)
+- [More about SVM features](https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72)
+- [More about HOG features](https://www.learnopencv.com/histogram-of-oriented-gradients/)
+- [How to build a neural network](https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
+- [A Comprehensive Guide to Convolutional Neural Networks](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
+- [Convolutional Neural Networks in Keras](https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
