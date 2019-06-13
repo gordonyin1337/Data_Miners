@@ -5,12 +5,12 @@ title: Final Report
 Final Report
 ========
 
-### Final Report Video:
+## Final Report Video:
 
 ## Project Summary:
 The goal of our project is to classify Minecraft biomes using a Convolutional Neural Network and screenshots of the game as training and input data. This is a computer vision and image classification project that is not only able to print out the biome a Malmo agent is in simply by taking screenshots and classifying the images, but also compares a baseline SVM classification algorithm to a more advanced Convolutional Neural Network.
 
-### Approaches:
+## Approaches:
 To gather image data for training our classification algorithms, we run a Malmo mission in which the agent spawns in a single biome, and teleports to 100 different locations using "tp" commands and a random number generator and takes 8 screenshots while spinning around. For our screenshot script, we used the modules win32gui, win32ui, ctypes, and PIL. It uses win32gui to locate the active Minecraft application and get its dimensions of the bounding rectangle. It then retrieves its device context and making a replica, making it compatible specifically to Minecraft. It then creates a bitmap with the device context as well as the dimensions. It then prints the client into the device context and creates an image using the bitmap information. If an image has been successfully created, it will be saved as a jpg file in the same directory as the script. After the mission, there is a total of 800 screenshots per biome to train with, separated into their own directories. We have a total of 21,600 images of 27 Minecraft biomes.
 
 For our baseline, we used the support vector machine classifier provided from the sklearn module. To utilize this classifier with images, we needed to convert the images to grayscale and get a histogram of oriented gradients (HOG) for each one. In order to do this, we used the libraries sklearn, skimage, PIL, cv2, os, and numpy. Using the main directory, we looped through each sub-directory containing the four different biomes and used cv2 to read the images, turn them to grayscale, and resize them to keep the images consistent. We then used the hog function from sklearn to pixelate the image into cells, returning an array of numbers representing gradient strength per pixel, with higher numbers representing a greater change in intensity or color compared to other pixels, as well as a visualization of the gradient strength throughout the image. We used a final list to keep track of the arrays of numbers for each image as well as a list to keep track of the the classes of each. Once every image's HOG numbers have been calculated, we convert the histogram list into a numpy array as well as the labels, reshaping it to match the list. We used numpy's hstack function to concantenate the list with the labels and shuffled the data. We then partitioned the training and test data using a 75/25 split and fitted the training data into our SVM classifier. Once the training data was fitted, we used the predict function with the test data and scored the accuracy of it.
@@ -23,10 +23,11 @@ When creating this Neural Network we had to consider several hyperparameters and
  
 After creating the convolutional neural network we used the fit function with the training and test data in order to train the neural network. The model can cycle over the data many times, improving the neural network up to a certain point. We chose to cycle over the data 50 times in order to achieve the highest accuracy. We used the “callback” function in Keras which allowed us to save the weights for every cycle and save whichever cycle had the highest accuracy on the test data. This is important because when using the “RMSProp” optimizer it is possible to overshoot the optimal weight values. As a result, the last cycle, or “epoch” on the data may not necessarily be the one with the highest accuracy. 
 
-### Evaluation:
+## Evaluation:
 For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 23% and our CNN achieves an accuracy of 63% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. Another significant observation was how the accuracy of the baseline and CNN changed when we added more biomes. When we increased the number of biomes from 4 to 27 the accuracy of the baseline dropped around 35% while the accuracy of the CNN decreased by 20%, indicating that the CNN is better suited for handling a higher number of classes. These are the plots of both classification algorithms’ accuracy:
 
 SVM Accuracy and Error Rate
+------
 ![](images/SVMclass.png "SVM classification report") 
 ![](images/SVMupdated.png "SVM training and test error with training data") 
 ![](images/finalgraph.jpg "CNN Loss and Accuracy")
@@ -35,7 +36,7 @@ For our qualitative evaluation, we use our working test model within Malmo, and 
 
 After analyzing both qualitative and quantitative evaluations, we have concluded that a Convolutional Neural Network is better suited to classifying the biome images. Classifying the biomes solely based on pixel color and intensity is not enough to accurately classify a Minecraft biome, due to the many similar colors and block types that can present themselves in different biomes. The CNN's ability to understand the sophistication of an image allows its accuracy to be much higher than traditional image classification algorithms.
 
-### References:
+## References:
 - [Malmo Documentation](http://microsoft.github.io/malmo/0.30.0/Documentation/index.html)
 - [How to take a screenshot on Windows](https://stackoverflow.com/questions/19695214/python-screenshot-of-inactive-window-printwindow-win32gui)
 - [How to get HOG features and train them with SVM](https://www.kaggle.com/manikg/training-svm-classifier-with-hog-features)
