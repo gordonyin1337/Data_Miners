@@ -26,7 +26,7 @@ When creating this Neural Network we had to consider several hyperparameters and
 ### Evaluation:
 [UPDATE NUMBERS AND PLOTS]
 
-For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 25% and our CNN achieves an accuracy of [PERCENTAGE]% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. These are the plots of both classification algorithms’ accuracy:
+For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 25% and our CNN achieves an accuracy of 63% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. Another significant observation was how the accuracy of the baseline and CNN changed when we added more biomes. When we increased the number of biomes from 4 to 27 the accuracy of the baseline dropped around 35% while the accuracy of the CNN decreased by 20%, indicating that the CNN is better suited for handling a higher number of classes. These are the plots of both classification algorithms’ accuracy:
 
 [UPDATED PLOTS GO HERE]
 ![](images/svmnew.png "SVM training and test error") 
@@ -44,3 +44,4 @@ After analyzing both qualitative and quantitative evaluations, we have concluded
 - [How to build a neural network](https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
 - [A Comprehensive Guide to Convolutional Neural Networks](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
 - [Convolutional Neural Networks in Keras](https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5)
+-[Understanding RMSprop — faster neural network learning](https://towardsdatascience.com/understanding-rmsprop-faster-neural-network-learning-62e116fcf29a)
