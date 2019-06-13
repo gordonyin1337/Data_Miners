@@ -8,7 +8,7 @@ Final Report
 ## Final Report Video:
 
 ## Project Summary:
-The goal of our project is to classify Minecraft biomes using a Convolutional Neural Network and screenshots of the game as training and input data. This is a computer vision and image classification project that is not only able to print out the biome a Malmo agent is in simply by taking screenshots and classifying the images, but also compares a baseline SVM classification algorithm to a more advanced Convolutional Neural Network.
+The goal of our project is to classify Minecraft biomes using a Convolutional Neural Network and screenshots of the game as training and input data. This is a computer vision and image classification project that is not only able to print out the biome a Malmo agent is in simply by taking screenshots and classifying the images, but also compares a baseline SVM classification algorithm to a more advanced Convolutional Neural Network. The game features many biomes that look similar to each other or contain the same block types, and there are some biomes that are only modifications of existing biomes. Due to these similiarities, this project shows how the sophistication of a CNN classifies images more accurately than simpler image classification algorithms.
 
 ## Approaches:
 
