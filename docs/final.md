@@ -7,7 +7,7 @@ Final Report
 
 ### Final Report Video:
 
-### Project Summary:
+## Project Summary:
 The goal of our project is to classify Minecraft biomes using a Convolutional Neural Network and screenshots of the game as training and input data. This is a computer vision and image classification project that is not only able to print out the biome a Malmo agent is in simply by taking screenshots and classifying the images, but also compares a baseline SVM classification algorithm to a more advanced Convolutional Neural Network.
 
 ### Approaches:
@@ -24,8 +24,9 @@ When creating this Neural Network we had to consider several hyperparameters and
 After creating the convolutional neural network we used the fit function with the training and test data in order to train the neural network. The model can cycle over the data many times, improving the neural network up to a certain point. We chose to cycle over the data 50 times in order to achieve the highest accuracy. We used the “callback” function in Keras which allowed us to save the weights for every cycle and save whichever cycle had the highest accuracy on the test data. This is important because when using the “RMSProp” optimizer it is possible to overshoot the optimal weight values. As a result, the last cycle, or “epoch” on the data may not necessarily be the one with the highest accuracy. 
 
 ### Evaluation:
-For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 25% and our CNN achieves an accuracy of 63% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. Another significant observation was how the accuracy of the baseline and CNN changed when we added more biomes. When we increased the number of biomes from 4 to 27 the accuracy of the baseline dropped around 35% while the accuracy of the CNN decreased by 20%, indicating that the CNN is better suited for handling a higher number of classes. These are the plots of both classification algorithms’ accuracy:
+For our quantitiative evaluation, we compare the accuracy of our baseline classification algorithm and our Neural Network for training and test data. With a 75/25 split for training and test data, our baseline achieves an accuracy of 23% and our CNN achieves an accuracy of 63% on the test data. The Neural Network is significantly more accurate than the baseline according to this data. Another significant observation was how the accuracy of the baseline and CNN changed when we added more biomes. When we increased the number of biomes from 4 to 27 the accuracy of the baseline dropped around 35% while the accuracy of the CNN decreased by 20%, indicating that the CNN is better suited for handling a higher number of classes. These are the plots of both classification algorithms’ accuracy:
 
+SVM Accuracy and Error Rate
 ![](images/SVMclass.png "SVM classification report") 
 ![](images/SVMupdated.png "SVM training and test error with training data") 
 ![](images/finalgraph.jpg "CNN Loss and Accuracy")
