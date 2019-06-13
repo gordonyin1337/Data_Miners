@@ -15,7 +15,7 @@ To gather image data for training our classification algorithms, we run a Malmo 
 
 For our baseline, we used the support vector machine classifier provided from the sklearn module. To utilize this classifier with images, we needed to convert the images to grayscale and get a histogram of oriented gradients (HOG) for each one. In order to do this, we used the libraries sklearn, skimage, PIL, cv2, os, and numpy. Using the main directory, we looped through each sub-directory containing the four different biomes and used cv2 to read the images, turn them to grayscale, and resize (150x150) them to keep the images consistent. We then used the hog function from sklearn to pixelate the image into cells, returning an array of numbers representing gradient strength per pixel, with higher numbers representing a greater change in intensity or color compared to other pixels, as well as a visualization of the gradient strength throughout the image. We used a final list to keep track of the arrays of numbers for each image as well as a list to keep track of the the classes of each. Once every image's HOG numbers have been calculated, we convert the histogram list into a numpy array as well as the labels, reshaping it to match the list. We used numpy's hstack function to concantenate the list with the labels and shuffled the data. We then partitioned the training and test data using a 75/25 split and fitted the training data into our SVM classifier. Once the training data was fitted, we used the predict function with the test data and scored the accuracy of it.
 
-<b>Example of an image's gradients:/b>  
+<b>Example of an image's gradients:</b>  
 ![](images/normalss.png "Normal screenshot") 
 ![](images/gradientofss.png "Screenshot with gradient strength") 
 
